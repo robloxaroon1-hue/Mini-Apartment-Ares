@@ -648,11 +648,11 @@ footer{
         <span class="wifi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></span>
         <div class="wifi-vals">
           <span class="wifi-item">Red: <b>Mini Apartment Ares</b></span>
-          <span class="wifi-item">Clave: <b>lugarfeliz33</b></span>
+          <span class="wifi-item">Clave: <b>Lugarfeliz33</b></span>
         </div>
       </div>
       <div class="apt-btns">
-        <button class="btn-pink" onclick="showToast('¡Consulta enviada para Ares Apartment 1! Te contactamos pronto 🎉')">Consultar disponibilidad →</button>
+        <button class="btn-pink" onclick="prefillContact('Ares Apartment 1')">Consultar disponibilidad →</button>
         <button class="btn-ghost" onclick="openModal()">Ver normas</button>
       </div>
     </div>
@@ -683,12 +683,12 @@ footer{
       <div class="wifi-strip">
         <span class="wifi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></span>
         <div class="wifi-vals">
-          <span class="wifi-item">Red: <b>Mini Apartment Zeus</b></span>
-          <span class="wifi-item">Clave: <b>lugarfeliz33</b></span>
+          <span class="wifi-item">Red: <b>Mini Apartment 2</b></span>
+          <span class="wifi-item">Clave: <b>Lugarfeliz33</b></span>
         </div>
       </div>
       <div class="apt-btns">
-        <button class="btn-pink" onclick="showToast('¡Consulta enviada para Ares Apartment 2! Te contactamos pronto 🎉')">Consultar disponibilidad →</button>
+        <button class="btn-pink" onclick="prefillContact('Ares Apartment 2')">Consultar disponibilidad →</button>
         <button class="btn-ghost" onclick="openModal()">Ver normas</button>
       </div>
     </div>
@@ -733,6 +733,7 @@ footer{
         <div class="rule"><span class="rule-icon">🔑</span><div class="rule-text"><b>Llaves</b> — pérdida cuesta S/. 150. Déjalas dentro al hacer check-out.</div></div>
         <div class="rule"><span class="rule-icon">🕙</span><div class="rule-text"><b>Check-out</b> antes de las 11:00 a.m. Dejar ordenado.</div></div>
         <div class="rule"><span class="rule-icon">🚫</span><div class="rule-text"><b>Prohibido</b> fiestas, sustancias ilegales y actividades de riesgo.</div></div>
+        <div class="rule"><span class="rule-icon">⚖️</span><div class="rule-text"><b>Responsabilidad</b> — el establecimiento actúa únicamente como arrendador del espacio. No se hace responsable por actos de terceros, agresiones, accidentes o cualquier hecho ocurrido dentro o fuera de la unidad durante la estadía del huésped.</div></div>
       </div>
     </div>
     <div>
@@ -830,6 +831,7 @@ footer{
       <div class="mr"><div class="mr-dot"></div><div class="mr-text"><b>Pérdida de llaves:</b> S/. 150 por cambio de sistema. Déjalas siempre dentro.</div></div>
       <div class="mr"><div class="mr-dot"></div><div class="mr-text"><b>Check-out</b> antes de las 11:00 a.m. — dejar ordenado, ventanas cerradas, luces apagadas.</div></div>
       <div class="mr"><div class="mr-dot"></div><div class="mr-text">El alojamiento <b>no se responsabiliza</b> por pérdida de dinero, documentos, joyas u objetos personales.</div></div>
+      <div class="mr"><div class="mr-dot"></div><div class="mr-text"><b>Responsabilidad del arrendador:</b> el establecimiento actúa únicamente como arrendador de un espacio privado. No se hace responsable por actos de terceros, agresiones, accidentes o cualquier hecho ocurrido dentro o fuera de la unidad durante la estadía del huésped.</div></div>
       <div class="mr"><div class="mr-dot"></div><div class="mr-text">El incumplimiento otorga derecho a <b>finalizar la estadía sin reembolso</b> y solicitar la salida inmediata.</div></div>
       <div class="mr"><div class="mr-dot"></div><div class="mr-text"><b>Prohibido:</b> fiestas, sustancias ilegales, exceso de alcohol y actividades peligrosas. El huésped ingresa bajo su propia responsabilidad.</div></div>
     </div>
@@ -892,7 +894,7 @@ document.addEventListener('click',e=>{
 });
 
 // Reemplaza este número por el WhatsApp real del negocio (formato: código de país + número, sin + ni espacios)
-const WHATSAPP_NUMBER="51999999999";
+const WHATSAPP_NUMBER="51960072950";
 function rateViaWhatsapp(stars){
   const estrellas="★".repeat(stars)+"☆".repeat(5-stars);
   const msg=`¡Hola! Quiero dejar mi calificación de Mini Apartment Ares: ${estrellas} (${stars}/5).`;
@@ -950,12 +952,28 @@ function showToast(msg){
   t.textContent=msg;t.classList.add('on');
   setTimeout(()=>t.classList.remove('on'),4000);
 }
+function prefillContact(deptName){
+  document.getElementById('fa').value=deptName;
+  document.getElementById('fs').value='Reserva';
+  document.getElementById('contacto').scrollIntoView({behavior:'smooth'});
+  showToast('Formulario listo — completa tus datos y envía el mensaje 👇');
+}
 function send(){
   const n=document.getElementById('fn').value.trim();
+  const a=document.getElementById('fa').value;
   const e=document.getElementById('fe').value.trim();
+  const s=document.getElementById('fs').value;
   const m=document.getElementById('fm').value.trim();
   if(!n||!e||!m){showToast('Por favor completa los campos requeridos.');return}
-  showToast('¡Mensaje enviado! Te respondemos pronto ✓');
+  const lineas=[
+    `¡Hola! Soy ${n}.`,
+    a?`Departamento: ${a}`:null,
+    s?`Asunto: ${s}`:null,
+    `Número: ${e}`,
+    `Mensaje: ${m}`
+  ].filter(Boolean);
+  const msg=lineas.join('\n');
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank');
   ['fn','fe','fm'].forEach(id=>document.getElementById(id).value='');
   ['fa','fs'].forEach(id=>document.getElementById(id).selectedIndex=0);
 }
