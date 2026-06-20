@@ -526,7 +526,7 @@ footer{
   </div>
   <div class="tabs reveal">
     <button class="tab on" onclick="sw('ares',this)">Ares Apartment 1</button>
-    <button class="tab" onclick="sw('zeus',this)">Estudio Zeus</button>
+    <button class="tab" onclick="sw('zeus',this)">Ares Apartment 2</button>
     <button class="tab tab-soon" onclick="sw('hermes',this)">Loft Hermes <span class="tab-soon-badge">Próximamente</span></button>
   </div>
 
@@ -575,17 +575,17 @@ footer{
 
   <div class="panel" id="p-zeus">
     <div class="apt-visual" onclick="openLightbox('zeus')" style="background:linear-gradient(135deg,#141E2A,#1E2E3A)">
-      <img class="apt-photo" src="" alt="Estudio Zeus" onerror="this.style.display='none'"/>
+      <img class="apt-photo" src="zeus-1.jpg" alt="Ares Apartment 2" onerror="this.style.display='none'"/>
       <div class="apt-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Ver fotos</div>
       <div class="apt-visual-inner">⚡</div>
       <div class="apt-type">Estudio</div>
       <div class="apt-overlay">
-        <div class="apt-overlay-name">Estudio Zeus</div>
+        <div class="apt-overlay-name">Ares Apartment 2</div>
         <div class="apt-overlay-tag">Moderno y funcional</div>
       </div>
     </div>
     <div class="apt-info">
-      <h3 class="apt-name2">Estudio Zeus</h3>
+      <h3 class="apt-name2">Ares Apartment 2</h3>
       <p class="apt-tag2">Diseño inteligente en un solo ambiente. Todo lo que necesitas, sin espacio desperdiciado. Perfecto para viajeros solos o parejas.</p>
       <div class="feats">
         <div class="feat"><span class="feat-dot"></span>Ambiente integrado</div>
@@ -603,7 +603,7 @@ footer{
         </div>
       </div>
       <div class="apt-btns">
-        <button class="btn-pink" onclick="showToast('¡Consulta enviada para Estudio Zeus! Te contactamos pronto 🎉')">Consultar disponibilidad →</button>
+        <button class="btn-pink" onclick="showToast('¡Consulta enviada para Ares Apartment 2! Te contactamos pronto 🎉')">Consultar disponibilidad →</button>
         <button class="btn-ghost" onclick="openModal()">Ver normas</button>
       </div>
     </div>
@@ -621,7 +621,7 @@ footer{
     <div class="apt-info" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start">
       <span class="badge-pill" style="margin-bottom:20px"><span class="badge-dot"></span>Próxima inauguración</span>
       <h3 class="apt-name2">Loft Hermes</h3>
-      <p class="apt-tag2">Estamos preparando este espacio para ofrecerte la misma calidad que nuestras unidades Ares y Zeus. Muy pronto disponible.</p>
+      <p class="apt-tag2">Estamos preparando este espacio para ofrecerte la misma calidad que nuestros Ares Apartment 1 y 2. Muy pronto disponible.</p>
       <div class="apt-btns">
         <button class="btn-ghost" disabled style="opacity:.5;cursor:not-allowed">Próximamente</button>
       </div>
@@ -703,7 +703,7 @@ footer{
       <div class="f-row">
         <div class="fg"><label class="fl">Nombre</label><input class="fi" type="text" placeholder="Tu nombre" id="fn"/></div>
         <div class="fg"><label class="fl">Departamento</label>
-          <select class="fs2" id="fa"><option value="">Seleccionar…</option><option>Ares Apartment 1</option><option>Estudio Zeus</option><option disabled>Loft Hermes (Próximamente)</option></select>
+          <select class="fs2" id="fa"><option value="">Seleccionar…</option><option>Ares Apartment 1</option><option>Ares Apartment 2</option><option disabled>Loft Hermes (Próximamente)</option></select>
         </div>
         <div class="fg"><label class="fl">Número</label><input class="fi" type="tel" placeholder="+51 999 999 999" id="fe"/></div>
         <div class="fg"><label class="fl">Asunto</label>
@@ -816,7 +816,7 @@ function rateViaWhatsapp(stars){
 // Reemplaza estas rutas por las fotos reales de cada departamento (puedes poner las que quieras, cuantas necesites)
 const galleries={
   ares:["ares-1.jpg","ares-2.jpg","ares-3.jpg","ares-4.jpg","ares-5.jpg","ares-6.jpg","ares-7.jpg","ares-8.jpg","ares-9.jpg","ares-10.jpg","ares-11.jpg"],
-  zeus:[],
+  zeus:["zeus-1.jpg","zeus-2.jpg","zeus-3.jpg","zeus-4.jpg","zeus-5.jpg","zeus-6.jpg","zeus-7.jpg"],
   hermes:[]
 };
 let lbDept=null,lbIndex=0;
